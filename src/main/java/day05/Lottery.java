@@ -20,7 +20,7 @@ public class Lottery {
     public Set<Integer> getLottaryNumbers() {
         Random random = new Random();
         Set<Integer> result = new HashSet<>();
-        while (result.size() == numberOfNumber) {
+        while (result.size() != numberOfNumber) {
             result.add(random.nextInt(maxNumber) + 1);
         }
         return result;
