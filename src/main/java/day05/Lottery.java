@@ -6,21 +6,21 @@ import java.util.Set;
 
 public class Lottery {
 
-    private final int numberOfNumber;
+    private final int numberOfNumbers;
     private final int maxNumber;
 
-    public Lottery(int numberOfNumber, int maxNumber) {
-        if (numberOfNumber < 1 || maxNumber < 1) {
+    public Lottery(int numberOfNumbers, int maxNumber) {
+        if (numberOfNumbers < 1 || maxNumber < 1) {
             throw new IllegalArgumentException("invalid parameter");
         }
-        this.numberOfNumber = numberOfNumber;
+        this.numberOfNumbers = numberOfNumbers;
         this.maxNumber = maxNumber;
     }
 
     public Set<Integer> getLottaryNumbers() {
         Random random = new Random();
         Set<Integer> result = new HashSet<>();
-        while (result.size() != numberOfNumber) {
+        while (result.size() != numberOfNumbers) {
             result.add(random.nextInt(maxNumber) + 1);
         }
         return result;
